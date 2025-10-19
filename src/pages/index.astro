@@ -9,10 +9,7 @@ const url = "https://myhappyagency.com";
 const image = `${url}/og-image.jpg`; // mets ici ton image OG réelle (1200x630 recommandé)
 const SIZE = 28;
 
-const BRANDS = Array.from(
-  { length: 15 },
-  (_, i) => `./brands/${i + 1}.svg`,
-);
+const BRANDS = Array.from({ length: 15 }, (_, i) => `./brands/${i + 1}.svg`);
 ---
 
 <!doctype html>
@@ -133,7 +130,7 @@ const BRANDS = Array.from(
                   </span>
                   <img
                     class="w-8 lg:w-10"
-                    src="../../public/gd.png"
+                    src="./gd.png"
                     alt="Guillaume Duhan"
                     loading="lazy"
                   />
@@ -142,22 +139,22 @@ const BRANDS = Array.from(
               <div class="grid gap-2">
                 <div class="avatar-stack mx-auto">
                   <img
-                    src="../../public/clients/1.jpeg"
+                    src="./clients/1.jpeg"
                     alt="Avatar 1"
                     class="avatar object-cover"
                   />
                   <img
-                    src="../../public/clients/2.jpeg"
+                    src="./clients/2.jpeg"
                     alt="Avatar 2"
                     class="avatar object-cover"
                   />
                   <img
-                    src="../../public/clients/3.jpeg"
+                    src="./clients/3.jpeg"
                     alt="Avatar 3"
                     class="avatar object-cover"
                   />
                   <img
-                    src="../../public/clients/4.jpg"
+                    src="./clients/4.jpg"
                     alt="Avatar 4"
                     class="avatar object-cover"
                   />
