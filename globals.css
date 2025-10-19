@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Cal+Sans:wght@400;700&family=Geist:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@400;700&family=Geist:wght@100..900&display=swap');
+
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --font-sans: 'Geist', -apple-system, BlinkMacSystemFont, 'Segoe UI',
+      Roboto, Helvetica, Arial, sans-serif;
+  }
+
+  @theme {
+    --color-happy-50: hsl(222, 100%, 96%);
+    --color-happy-100: hsl(227, 100%, 93%);
+    --color-happy-200: hsl(228, 100%, 87%);
+    --color-happy-300: hsl(230, 100%, 80%);
+    --color-happy-400: hsl(235, 100%, 72%);
+    --color-happy-500: hsl(240, 100%, 65%);
+    --color-happy-600: hsl(245, 99%, 56%);
+    --color-happy-700: hsl(246, 76%, 51%);
+    --color-happy-800: hsl(245, 72%, 41%);
+    --color-happy-900: hsl(244, 62%, 34%);
+    --color-happy-950: hsl(246, 63%, 20%);
+  }
+
+  /* Application globale */
+  html {
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    background: black;
+    color: white;
+    @apply text-[16px];
+  }
+
+  /* Classe utilitaire */
+  .cal-sans {
+    font-family: "Cal Sans", sans-serif;
+    font-weight: normal;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  .avatar-stack {
+    @apply flex items-center justify-center bg-transparent;
+  }
+
+  .avatar {
+    @apply w-8 h-8 rounded-full bg-neutral-500 border-2 border-[#3321FE] relative transition-transform duration-200;
+    margin-left: -0.75rem;
+    /* ≈ -12px overlap */
+    z-index: 1;
+  }
+
+  .avatar:first-child {
+    margin-left: 0;
+  }
+
+  .avatar:hover {
+    @apply scale-110;
+    z-index: 10;
+  }
+
+  .tag-neutral {
+    @apply inline-flex text-sm lg:text-base items-center gap-2 bg-neutral-900 text-neutral-100 pl-2 pr-4 py-2 rounded-full font-medium;
+  }
+}
+
+@keyframes fade-in-up {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fade-in-up 0.8s ease-out forwards;
+}
+
+.fade-in-up-1 {
+  animation: fade-in-up 1.6s ease-out forwards;
+}
+
+.fade-in-up-2 {
+  animation: fade-in-up 2.2s ease-out forwards;
+}
+
+.fade-in-up-3 {
+  animation: fade-in-up 2.6s ease-out forwards;
+}

@@ -1,0 +1,27 @@
+# robots.txt — My Happy Agency
+# Allow full site indexing but block image crawling
+
+User-agent: *
+Disallow: /images/private/
+Disallow: /uploads/secret/
+Noindex: /images/
+Noindex: /uploads/
+
+# Prevent images from appearing in Google Images
+Disallow: /*.jpg$
+Disallow: /*.jpeg$
+Disallow: /*.png$
+Disallow: /*.webp$
+Disallow: /*.gif$
+Disallow: /*.svg$
+
+# Allow CSS, JS, and fonts
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.woff$
+Allow: /*.woff2$
+
+# Sitemap for better crawling
+Sitemap: https://myhappyagency.com/sitemap.xml
+
+# End of file

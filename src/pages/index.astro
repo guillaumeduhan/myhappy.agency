@@ -1,16 +1,255 @@
 ---
+import "../../globals.css";
+import Logo from "../components/Logo.astro";
+const title =
+  "My Happy Agency — Agence de création web & branding professionnel";
+const description =
+  "Nous transformons votre image de marque en une expérience digitale impactante. Création de sites web, identité visuelle et stratégie de marque sur mesure.";
+const url = "https://myhappyagency.com";
+const image = `${url}/og-image.jpg`; // mets ici ton image OG réelle (1200x630 recommandé)
+const SIZE = 28;
 
+const BRANDS = Array.from(
+  { length: 15 },
+  (_, i) => `../../public/brands/${i + 1}.svg`,
+);
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Title & Description -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/favicon.png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:creator" content="@myhappyagency" />
+
+    <!-- Schema.org / JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "My Happy Agency",
+        "url": "{url}",
+        "logo": "{url}/logo.png",
+        "description": "{description}",
+        "founder": {
+          "@type": "Person",
+          "name": "Guillaume Duhan"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/myhappyagency",
+          "https://x.com/blackevilgoblin"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "contact@myhappyagency.com"
+        }
+      }
+    </script>
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#10b981" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+  </head>
+
+  <body>
+    <main class="grid gap-12 pb-24">
+      <section
+        class="bg-gradient-to-b from-neutral-950 to-transparent px-4 lg:px-0"
+      >
+        <div class="container mx-auto text-center py-4 lg:py-12">
+          <div class="grid gap-8 max-w-[900px] mx-auto">
+            <div class="grid gap-8 fade-in-up">
+              <div class="flex items-center justify-center">
+                <Logo />
+              </div>
+              <div class="flex items-center justify-center gap-4">
+                <img class="h-8 lg:h-16" src="15588.png" alt="" />
+                <p class="text-neutral-500 text-sm lg:text-[20px]">
+                  Top 1% des <span class="font-bold">agences web</span>
+                  <br />de France (Forbes Digital)
+                </p>
+                <img
+                  src="15588.png"
+                  alt=""
+                  class="transform scale-x-[-1] h-8 lg:h-16"
+                />
+              </div>
+            </div>
+            <div class="grid gap-4">
+              <h1
+                class="cal-sans text-[36px] md:text-[56px] lg:text-[72px] fade-in-up-1"
+                style={{
+                  lineHeight: 1.16,
+                }}
+              >
+                Agence de création web & branding professionnel
+              </h1>
+              <p
+                class="text-neutral-500 lg:text-[20px] max-w-[500px] mx-auto fade-in-up-2"
+              >
+                Nous transformons votre image de marque en expérience digitale
+                impactante.
+              </p>
+            </div>
+            <div class="grid gap-8 fade-in-up-3">
+              <a
+                href="https://codeg.link/20-min"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="inline-block"
+              >
+                <button
+                  class="flex items-center justify-center gap-2 mx-auto px-4 py-2 lg:px-6 lg:py-4 text-[16px] lg:text-[20px] font-[500] border-4 border-happy-700 rounded-lg bg-gradient-to-r from-happy-700 to-transparent cursor-pointer hover:to-happy-600 transition duration-300"
+                >
+                  <span>
+                    Rendez-vous avec Guillaume
+                    <span class="hidden lg:inline-flex">notre CEO</span>
+                  </span>
+                  <img
+                    class="w-8 lg:w-10"
+                    src="../../public/gd.png"
+                    alt="Guillaume Duhan"
+                    loading="lazy"
+                  />
+                </button>
+              </a>
+              <div class="grid gap-2">
+                <div class="avatar-stack mx-auto">
+                  <img
+                    src="../../public/clients/1.jpeg"
+                    alt="Avatar 1"
+                    class="avatar object-cover"
+                  />
+                  <img
+                    src="../../public/clients/2.jpeg"
+                    alt="Avatar 2"
+                    class="avatar object-cover"
+                  />
+                  <img
+                    src="../../public/clients/3.jpeg"
+                    alt="Avatar 3"
+                    class="avatar object-cover"
+                  />
+                  <img
+                    src="../../public/clients/4.jpg"
+                    alt="Avatar 4"
+                    class="avatar object-cover"
+                  />
+                </div>
+                <p
+                  class="text-neutral-500 lg:text-[20px] max-w-[500px] mx-auto"
+                >
+                  500+ clients déjà satisfaits
+                </p>
+              </div>
+              <div class="grid lg:flex items-center justify-center gap-4">
+                <div class="tag-neutral">
+                  <div class="rounded-full">
+                    <svg
+                      class="text-happy-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={SIZE}
+                      height={SIZE}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                      ></path></svg
+                    >
+                  </div>
+                  <span class="text-center lg:text-left w-full"
+                    >Sites webs & Référencement</span
+                  >
+                </div>
+                <div class="tag-neutral">
+                  <div class="rounded-full">
+                    <svg
+                      class="text-happy-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={SIZE}
+                      height={SIZE}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                      ></path></svg
+                    >
+                  </div>
+                  <span class="text-center lg:text-left w-full"
+                    >Livraison en 7 jours</span
+                  >
+                </div><div class="tag-neutral">
+                  <div class="rounded-full">
+                    <svg
+                      class="text-happy-700"
+                      xmlns="http://www.w3.org/2000/svg"
+                      width={SIZE}
+                      height={SIZE}
+                      viewBox="0 0 24 24"
+                    >
+                      <path
+                        fill="currentColor"
+                        d="m10.6 16.6l7.05-7.05l-1.4-1.4l-5.65 5.65l-2.85-2.85l-1.4 1.4zM12 22q-2.075 0-3.9-.788t-3.175-2.137T2.788 15.9T2 12t.788-3.9t2.137-3.175T8.1 2.788T12 2t3.9.788t3.175 2.137T21.213 8.1T22 12t-.788 3.9t-2.137 3.175t-3.175 2.138T12 22"
+                      ></path></svg
+                    >
+                  </div>
+                  <span class="text-center lg:text-left w-full"
+                    >Equipe internationale</span
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="border-t border-b border-dashed border-neutral-800 w-fullfade-in-up-3"
+      >
+        <div
+          class="grid container mx-auto grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 border border-dashed border-neutral-800 bg-transparent"
+        >
+          {
+            BRANDS.map((src) => (
+              <div class="flex items-center justify-center border-b border-l border-dashed border-neutral-800 aspect-square">
+                <img
+                  src={src}
+                  alt="Client logo"
+                  class="max-h-12 object-contain opacity-80 hover:opacity-100 transition duration-300"
+                  loading="lazy"
+                />
+              </div>
+            ))
+          }
+        </div>
+      </section>
+    </main>
+  </body>
 </html>

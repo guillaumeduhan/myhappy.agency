@@ -1,0 +1,18 @@
+---
+import logo from "../../public/logo.png";
+
+interface Props {
+  name?: string;
+}
+
+const { name = "YourBrand" } = Astro.props;
+---
+
+<a href="/" class="inline-flex items-center gap-2">
+  <img
+    src={logo.src}
+    alt={`${name || "My Happy Agency"} logo`}
+    class="h-8 lg:h-12 w-auto"
+    loading="lazy"
+  />
+</a>
