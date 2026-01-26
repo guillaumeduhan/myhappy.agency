@@ -8,11 +8,10 @@ interface Props {
 const { name = "YourBrand" } = Astro.props;
 ---
 
-<a href="/" class="inline-flex items-center gap-2">
+<a href="/">
   <img
     src={logo.src}
     alt={`${name || "My Happy Agency"} logo`}
-    class="h-8 lg:h-12 w-auto"
-    loading="lazy"
+    class="h-12 lg:min-h-16 lg:min-w-16 mx-auto z-[9999]"
   />
 </a>
