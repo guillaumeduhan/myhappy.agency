@@ -1,0 +1,93 @@
+---
+import "../globals.css";
+import Header from "../src/components/Header.astro";
+
+const title = "My Happy Agency — Agence de création web & branding professionnel";
+const description =
+  "Nous transformons votre image de marque en une expérience digitale impactante. Création de sites web, identité visuelle et stratégie de marque sur mesure.";
+const url = "https://myhappyagency.com";
+const image = `${url}/og-image.jpg`;
+---
+
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="generator" content={Astro.generator} />
+
+    <!-- Primary SEO -->
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta
+      name="keywords"
+      content="agence web, création site web, branding, identité visuelle, stratégie de marque, my happy agency"
+    />
+
+    <!-- Robots -->
+    <meta name="robots" content="index, follow" />
+    <meta name="googlebot" content="index, follow" />
+
+    <!-- Canonical -->
+    <link rel="canonical" href={url} />
+
+    <!-- Hreflang -->
+    <link rel="alternate" hreflang="fr" href={url} />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="/logo.png" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content={url} />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={image} />
+    <meta property="og:site_name" content="My Happy Agency" />
+    <meta property="og:locale" content="fr_FR" />
+
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={image} />
+    <meta name="twitter:creator" content="@myhappyagency" />
+
+    <!-- JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "My Happy Agency",
+        "url": "https://myhappyagency.com",
+        "logo": "https://myhappyagency.com/logo.png",
+        "description": "Nous transformons votre image de marque en une expérience digitale impactante.",
+        "founder": {
+          "@type": "Person",
+          "name": "Guillaume Duhan"
+        },
+        "sameAs": [
+          "https://www.linkedin.com/company/myhappyagency",
+          "https://x.com/blackevilgoblin"
+        ],
+        "contactPoint": {
+          "@type": "ContactPoint",
+          "contactType": "customer support",
+          "email": "contact@myhappyagency.com"
+        }
+      }
+    </script>
+
+    <!-- Theme -->
+    <meta name="theme-color" content="#4338ca" />
+  </head>
+
+  <body class="relative grid fade-in-up-2">
+    <main class="max-w-2xl mx-auto">
+      <Header />
+      <slot />
+    </main>
+  </body>
+</html>
